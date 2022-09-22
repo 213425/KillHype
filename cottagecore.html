@@ -2,12 +2,24 @@
 <html>
 <body>
 
-<h2>Image Size</h2>
+<h1>The template Element</h1>
 
-<p>Here we use the style attribute to specify the width and height of an image:</p>
+<p>Click the button below to display the hidden content from the template element.</p>
 
-<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
+<button onclick="showContent()">Show hidden content</button>
+
+<template>
+  <h2>Flower</h2>
+  <img src="img_white_flower.jpg" width="214" height="204">
+</template>
+
+<script>
+function showContent() {
+  var temp = document.getElementsByTagName("template")[0];
+  var clon = temp.content.cloneNode(true);
+  document.body.appendChild(clon);
+}
+</script>
 
 </body>
 </html>
-
